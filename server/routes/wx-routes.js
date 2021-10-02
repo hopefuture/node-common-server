@@ -30,11 +30,9 @@ router.get('/qd-openid', async (req, res, next) => {
 
   const { siteId, code } = query;
 
-  // TODO 根据 siteId 返回 appId、 appSecret 和 apn
-
-  const appId = 'wx322e3789a2130b92';
-  const appSecret = '989e33a45151b6ff973fa0f24facaa11';
-  const apn = '小程序测试站点';
+  const appId = 'xxxx';
+  const appSecret = 'xxxx';
+  const siteName = '小程序测试站点';
 
   try {
     /**
@@ -50,7 +48,8 @@ router.get('/qd-openid', async (req, res, next) => {
 
     res.json({
       ...userInfo,
-      apn
+      unionid: 'unionid',
+      siteName
     });
   } catch (err) {
     next(err);
